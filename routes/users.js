@@ -96,7 +96,7 @@ router.route("/login").post(async (request, respone) => {
         token,
         message: "Successful login",
       });
-      response.redirect(`${process.env.url}/users/forgot-password`);
+      // response.redirect(`${process.env.url}/users/forgot-password`);
     }
   } catch (err) {
     respone.status(500);
@@ -121,7 +121,7 @@ router.route("/signup").post(async (request, respone) => {
     await user.save();
     // db to store it
     respone.send(user);
-    response.redirect(`${process.env.url}/users/login`);
+    // response.redirect(`${process.env.url}/users/login`);
   } catch (err) {
     respone.status(500);
     respone.send(err);
@@ -155,7 +155,7 @@ router.route("/forgot-password").post(async (request, response) => {
         to: `${user.email}`,
         subject: "Password reset",
         html: `<h4>Your request for password reset has been accepted </h4><br/> <p> To reset your password,
-           <a href="${process.env.frontendurl}/ResetPassword/${token}"> click here </a>`,
+           <a href="https://cranky-kepler-b7f853.netlify.app/ResetPassword/${token}"> click here </a>`,
       });
       console.log("Forgotmail is", ForgotMail);
       if (ForgotMail.accepted.length > 0) {
@@ -194,7 +194,7 @@ router.route("/reset-password/:resetToken").post(async (request, response) => {
     console.log("updated User by Token", user);
 
     response.send({ message: "changed password successfully", user });
-    response.redirect(`${process.env.url}/users/login`);
+    // response.redirect(`${process.env.url}/users/login`);
     //       response.redirect(`${process.env.url}/users/forgot-password/${token}`);
   } catch (err) {
     response.send(err);

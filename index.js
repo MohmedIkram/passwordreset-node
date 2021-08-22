@@ -6,6 +6,7 @@ import { userRouter } from "./routes/users.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// mongo db connection
 const url = `mongodb+srv://ikram:${process.env.MongoPassword}@cluster0.rlfdm.mongodb.net/BookMyShow`;
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });

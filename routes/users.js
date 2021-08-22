@@ -1,10 +1,12 @@
 import bcrypt from "bcrypt";
 import express from "express";
 import jwt from "jsonwebtoken";
-import { auth as nice } from "../middleware/auth.js";
-import { Users } from "../models/users.js";
 import nodemailer from "nodemailer";
 import crypto from "crypto";
+
+import { auth as nice } from "../middleware/auth.js";
+import { Users } from "../models/users.js";
+
 import dotenv from "dotenv";
 dotenv.config();
 

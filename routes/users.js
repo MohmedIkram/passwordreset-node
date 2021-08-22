@@ -155,7 +155,7 @@ router.route("/forgot-password").post(async (request, response) => {
         to: `${user.email}`,
         subject: "Password reset",
         html: `<h4>Your request for password reset has been accepted </h4><br/> <p> To reset your password,
-           <a href="https://cranky-kepler-b7f853.netlify.app/ResetPassword/${token}"> click here </a>`,
+           <a href="https://quizzical-dubinsky-95e207.netlify.app/ResetPassword/${token}"> click here </a>`,
       });
       console.log("Forgotmail is", ForgotMail);
       if (ForgotMail.accepted.length > 0) {

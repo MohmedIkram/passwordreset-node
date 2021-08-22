@@ -7,8 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const url = `mongodb+srv://ikram:${process.env.MongoPassword}@cluster0.rlfdm.mongodb.net/BookMyShow`;
-// ||
-// "mongodb://localhost/BookMyShow";
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 const con = mongoose.connection;
